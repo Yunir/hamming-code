@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class Main {                                             /*  First||Second  */
     private static int[] correctAnswer = new int[]{0, 4, 2, 6, 1, 5, 3, 7, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
     private static int[] correctTextNum = new int[]{0, 23, 22, 13, 21, 12, 11, 14, 24, 23, 18, 22, 16, 13, 110, 21, 15, 22, 19, 11, 17, 14, 111};
-    private static String[] correctText = new String[]{"---Ошибок не обнаружено---", "r3", "r2", "i3", "r1", "i2", "i1", "i4", "r4",
+    private static String[] correctText = new String[]{"---РћС€РёР±РѕРє РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ---", "r3", "r2", "i3", "r1", "i2", "i1", "i4", "r4",
             "r3", "i8", "r2", "i6", "i3", "i10", "r1", "i5", "i2", "i9", "i1", "i7", "i4", "i11"};
     static int var = 0;
     static boolean[] answers = new boolean[]{false, false, false, false, false, false, false};
@@ -22,7 +22,7 @@ public class Main {                                             /*  First||Secon
     static boolean[] taskMassRes1 = new boolean[3];
     static boolean[] taskMass2 = new boolean[15];
     static boolean[] taskMassRes2 = new boolean[4];
-//Для ОНЛАЙН задания!!!
+//Р”Р»СЏ РћРќР›РђР™Рќ Р·Р°РґР°РЅРёСЏ!!!
     static int[] tasks = new int[5];
     static int result = 0;
     final static int MAGIC_NUM = 21;
@@ -52,7 +52,7 @@ public class Main {                                             /*  First||Secon
         }
         tasks[4] = ((year+v+jumpingNum) % max_task2) + 1;
     }
-//Для ОНЛАЙН ПРОВЕРКИ!!! ^^^
+//Р”Р»СЏ РћРќР›РђР™Рќ РџР РћР’Р•Р РљР!!! ^^^
 
     public static void validator(boolean task, int ans, int z) {
         int res = 0;
@@ -70,7 +70,7 @@ public class Main {                                             /*  First||Secon
                         if(correctAnswer[res] == i) System.out.print("**  ");
                         else System.out.print("..  ");
                     }
-                    System.out.print("-  ошибка в " + correctText[res]);
+                    System.out.print("-  РѕС€РёР±РєР° РІ " + correctText[res]);
                     System.out.println();
                 }
             }
@@ -89,7 +89,7 @@ public class Main {                                             /*  First||Secon
                         if (correctAnswer[res] == i) System.out.print("**  ");
                         else System.out.print("..  ");
                     }
-                    System.out.print("-  ошибка в " + correctText[res]);
+                    System.out.print("-  РѕС€РёР±РєР° РІ " + correctText[res]);
                     System.out.println();
                 } else System.out.println(correctText[0]);
             }
@@ -112,11 +112,11 @@ public class Main {                                             /*  First||Secon
         boolean typeWork = false;
         String tempo;
         if(args.length == 0 || (!args[0].contentEquals("1") && !args[0].contentEquals("2"))) {
-            System.out.print("Какой способ проверки(ручн. ввод(РВ) - 1, файл-чтение(ФЧ) - 2): ");
+            System.out.print("РљР°РєРѕР№ СЃРїРѕСЃРѕР± РїСЂРѕРІРµСЂРєРё(СЂСѓС‡РЅ. РІРІРѕРґ(Р Р’) - 1, С„Р°Р№Р»-С‡С‚РµРЅРёРµ(Р¤Р§) - 2): ");
             tempo = in.next();
             while (!(testViewNum(tempo)))
             {
-                System.out.print("Ошибка. Введите цифры либо 1(РВ), либо 2(ФЧ): ");
+                System.out.print("РћС€РёР±РєР°. Р’РІРµРґРёС‚Рµ С†РёС„СЂС‹ Р»РёР±Рѕ 1(Р Р’), Р»РёР±Рѕ 2(Р¤Р§): ");
                 tempo = in.next();
             }
             typeWork = (Integer.parseInt(tempo)==1?true:false);
@@ -130,11 +130,11 @@ public class Main {                                             /*  First||Secon
             sTask1 = Files.readAllLines(task1);
             sTask2 = Files.readAllLines(task2);
         } catch (IOException e) {
-            System.out.println("Проблемы с файлами task1 и(или) task2");
+            System.out.println("РџСЂРѕР±Р»РµРјС‹ СЃ С„Р°Р№Р»Р°РјРё task1 Рё(РёР»Рё) task2");
             ok = false;
         }
         if(typeWork) {
-            System.out.println("Шаблон: {[-Вариант] [1/2(задание)]} [№задания]+ ");
+            System.out.println("РЁР°Р±Р»РѕРЅ: {[-Р’Р°СЂРёР°РЅС‚] [1/2(Р·Р°РґР°РЅРёРµ)]} [в„–Р·Р°РґР°РЅРёСЏ]+ ");
             while(ok) {
                 temp = in.nextInt();
                 if (temp < 0)
@@ -143,11 +143,11 @@ public class Main {                                             /*  First||Secon
                     temp = in.nextInt();
                     task = temp == 1 ? false : true;
                     while (task && temp != 2) {
-                        System.out.print("вы ввели неверное задание(1, 2), повторите попытку: ");
+                        System.out.print("РІС‹ РІРІРµР»Рё РЅРµРІРµСЂРЅРѕРµ Р·Р°РґР°РЅРёРµ(1, 2), РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ: ");
                         temp = in.nextInt();
                         task = temp == 1 ? false : true;
                     }
-                    System.out.println("===Вариант " + var + "(Задание №" + temp + ")" + "===");
+                    System.out.println("===Р’Р°СЂРёР°РЅС‚ " + var + "(Р—Р°РґР°РЅРёРµ в„–" + temp + ")" + "===");
                 } else {
                     temp = temp-(var%10);
                     System.out.println((!task) ? sTask1.get(0) : sTask2.get(0));
@@ -176,10 +176,10 @@ public class Main {                                             /*  First||Secon
             String surname;
             int[] taskAnswers = new int[7];
 
-            File f = new File(".");    //путь откуда начинается поиск
+            File f = new File(".");    //РїСѓС‚СЊ РѕС‚РєСѓРґР° РЅР°С‡РёРЅР°РµС‚СЃСЏ РїРѕРёСЃРє
             FilenameFilter filter = new FilenameFilter(){
                 public boolean accept(File dir, String name){
-                    if(name.startsWith("inform_")) return true;   //если встречаем в имени файла ".rtf"
+                    if(name.startsWith("inform_")) return true;   //РµСЃР»Рё РІСЃС‚СЂРµС‡Р°РµРј РІ РёРјРµРЅРё С„Р°Р№Р»Р° ".rtf"
                     else return false;
                 }
             };
@@ -205,7 +205,7 @@ public class Main {                                             /*  First||Secon
                         taskAnswers[i] = Integer.parseInt(info[i + 4]);
                     }
                     System.out.println();
-                    System.out.println("Ученик: " + info[1] + " " + info[0] + " " + info[3] + " " + info[2]);
+                    System.out.println("РЈС‡РµРЅРёРє: " + info[1] + " " + info[0] + " " + info[3] + " " + info[2]);
                     //System.out.println();
                     generateTasks(112, 127, year, v);
                     /*System.out.println();
@@ -243,7 +243,7 @@ public class Main {                                             /*  First||Secon
                         int gymmyBoy=(int)(gb*10000000)%100000;
                         if ((gymmyBoy+5 > taskAnswers[6]) && (gymmyBoy-5 < taskAnswers[6])) answers[6] = true;
                     }
-                    System.out.print("Номера правильно выполненных заданий: ");
+                    System.out.print("РќРѕРјРµСЂР° РїСЂР°РІРёР»СЊРЅРѕ РІС‹РїРѕР»РЅРµРЅРЅС‹С… Р·Р°РґР°РЅРёР№: ");
                     for (int i = 0, j=0; i < 7; i++) {
                         if (answers[i]){
                             if(j!=0) System.out.print(", ");
@@ -253,18 +253,18 @@ public class Main {                                             /*  First||Secon
                             else result += 20;
                             j++;
                         }
-                        if (i==6 && j==0) System.out.print("ни одного");
+                        if (i==6 && j==0) System.out.print("РЅРё РѕРґРЅРѕРіРѕ");
                     }
                     System.out.println();
-                    System.out.print("Ключи к заданиям: {"+keys[0]);
+                    System.out.print("РљР»СЋС‡Рё Рє Р·Р°РґР°РЅРёСЏРј: {"+keys[0]);
                     for (int i = 1; i < 5; i++) {
                         System.out.print(", "+keys[i]);
                     }
                     System.out.println("}");
-                    System.out.println("Результат ученика "+ info[0] + " " + info[1] + ": "+result + "%");
+                    System.out.println("Р РµР·СѓР»СЊС‚Р°С‚ СѓС‡РµРЅРёРєР° "+ info[0] + " " + info[1] + ": "+result + "%");
 
                 } catch (IOException e) {
-                    System.out.println("Файл inform_online не обнаружен в директории");
+                    System.out.println("Р¤Р°Р№Р» inform_online РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅ РІ РґРёСЂРµРєС‚РѕСЂРёРё");
                 }
             }
         }
